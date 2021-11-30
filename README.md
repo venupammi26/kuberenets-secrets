@@ -20,7 +20,7 @@
 
 
 
-
+Reference :  https://www.digitalocean.com/community/tutorials/how-to-deploy-resilient-go-app-digitalocean-kubernetes
 >docker login
 >
 >docker build . -t venupammi/s3-go-kube
