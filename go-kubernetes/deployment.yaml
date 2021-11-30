@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: s3-go-kube
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: s3-go-kube
+  template:
+    metadata:
+      labels:
+        name: s3-go-kube
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: ipfixcat-env
+        image: venupammi/s3-go-kube
+        imagePullPolicy: IfNotPresent
+        name: s3-go-kube
+        ports:
+          - containerPort: 3000

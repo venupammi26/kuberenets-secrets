@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-hello-world
+  labels:
+    app: web
+spec:
+  containers:	
+    - name: go-hello-world
+      image: venupammi/go-hello-world:1.0.0
+      ports:
+        - containerPort: 4739
