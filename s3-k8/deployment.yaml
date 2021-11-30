@@ -33,3 +33,8 @@ spec:
                 key: s3AccessKeyId		       
         ports:
           - containerPort: 3000
+        lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", ./main --accessKey=$s3AccessKeyId --accessSecret=$s3secretKey --myBucket=$myBucket --Region=$Region --push2s3=True 2>ipfix.log &]    
+        
